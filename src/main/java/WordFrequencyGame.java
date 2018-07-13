@@ -22,8 +22,7 @@ public class WordFrequencyGame {
     private String getResultView(List<Word> list) {
         StringJoiner joiner = new StringJoiner("\n");
         for (Word w : list) {
-            String s = w.getValue() + " " + w.getWordCount();
-            joiner.add(s);
+            joiner.add(w.getValue() + " " + w.getWordCount());
         }
         return joiner.toString();
     }
@@ -31,8 +30,7 @@ public class WordFrequencyGame {
     private List<Word> getWordList(Map<String, List<Input>> map) {
         List<Word> list = new ArrayList<>();
         for (Map.Entry<String, List<Input>> entry : map.entrySet()) {
-            Word input = new Word(entry.getKey(), entry.getValue().size());
-            list.add(input);
+            list.add(new Word(entry.getKey(), entry.getValue().size()));
         }
         return list;
     }
@@ -42,8 +40,7 @@ public class WordFrequencyGame {
 
         List<Input> inputList = new ArrayList<>();
         for (String s : arr) {
-            Input input = new Input(s);
-            inputList.add(input);
+            inputList.add(new Input(s));
         }
 
         return getListMap(inputList);
